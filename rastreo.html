@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Rastreo</title>
+    
+    
+    <link rel="stylesheet" href="assets/css/styles.css"></head><body><header class="topbar"><div class="container header-inner">
+        <img src="assets/images/logopaquete.png" width="20%" alt=" (placeholder)"> <nav class="mainnav"><a href="index.html">Inicio</a><a href="about.html">Historia</a><a href="services.html">Servicios</a><a href="prices.html">Precios</a><a href="contact.html">Contacto</a><a href="rastreo.html">Rastreo</a></nav></div></header><main class="container">
+        Ingresa tu numero de Ratreo o Guia : 
+<!-- Formulario -->
+<input type="text" id="trackingNumber" placeholder="Ingresa tu número de guía">
+<button onclick="rastreo()">Buscar</button>
+
+<!-- Resultado -->
+<p id="resultado"></p>
+
+<script>
+  function rastreo() {
+    let numero = document.getElementById("trackingNumber").value;
+    let resultado = document.getElementById("resultado");
+
+    if (numero === "") {
+      resultado.innerHTML = "Por favor, ingresa un número de guía.";
+    } else {
+      // Aquí simulamos respuestas ficticias
+      let estados = [
+        "Tu paquete está en camino 🚚",
+        "Tu paquete llegó al centro de distribución 📦",
+        "Tu paquete fue entregado ✅",
+        "Tu paquete está en proceso de recolección ⏳"
+      ];
+
+      // Escoge un estado al azar
+      let estado = estados[Math.floor(Math.random() * estados.length)];
+
+      resultado.innerHTML = "Guía: " + numero + "<br>" + estado;
+    }
+  }
+</script>
+
+</footer><script src="assets/js/main.js"></script></body></html>
